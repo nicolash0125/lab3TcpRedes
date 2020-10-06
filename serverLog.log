@@ -64,3 +64,9 @@
 2020-10-06 00:32:51 INFO     SERVER: el archivo abierto fue ../videos/Redes5G.mp4 
 2020-10-06 00:34:20 INFO     SERVER: iniciando
 2020-10-06 00:34:20 INFO     SERVER: el archivo abierto fue ../videos/Redes5G.mp4 
+2020-10-06 12:25:53 INFO     Connected to localhost on port 50000
+2020-10-06 12:26:28 INFO     Connected to localhost on port 50000
+2020-10-06 12:27:00 INFO     Connected to localhost on port 50000
+2020-10-06 12:27:04 INFO     SERVER: el número de conexiones definido es 2
+2020-10-06 12:28:01 INFO     Connected to localhost on port 50000
+2020-10-06 12:28:05 INFO     SERVER: el número de conexiones definido es 2
