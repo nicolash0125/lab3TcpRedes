@@ -9,7 +9,7 @@ import hashlib
 import time
 from threading import Thread
 # print_lock = threading.Lock()
-logging.basicConfig(filename="serverLog.log", level=logging.INFO,
+logging.basicConfig(filename="./serverFiles/serverLog.log", level=logging.INFO,
                     format='%(asctime)s %(levelname)-8s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S'
                     )
@@ -58,18 +58,21 @@ def main():
     # Socket del servidor
     serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     serversocket.bind((host, port))
-    print('Port %s', port)
+    print('Port: ', port)
 
     # Become a server socket
     serversocket.listen(5)
     print("Socket listening")
     inputText = int(input("\n ¿Qué archivo desea enviar?"
                           "\n 1. 145 MB"
-                          "\n 2. 355 MB"))
+                          "\n 2. 355 MB"
+                          "\n 3. 200 MB \n"))
     if inputText == 1:
-        f = "../videos/Redes5G.mp4"
+        f = "./data/Redes5G.mp4"
+    elif inputText == 2:
+        f = "./data/Vivaldi.mp4"
     else:
-        f = "../videos/Vivaldi.mp4"
+        f = "./data/200MB.zip"
 
     file = f
     print("Archivo seleccionado: ", file)

@@ -12,7 +12,7 @@ def main():
 
     cliente_num = random.random()*100000000000
     # Initializes the client log
-    logging.basicConfig(filename="./files/client" + str(cliente_num) + ".log", level=logging.INFO,
+    logging.basicConfig(filename="./clientsFiles/client" + str(cliente_num) + ".log", level=logging.INFO,
                         format='%(asctime)s %(levelname)-8s %(message)s',
                         datefmt='%Y-%m-%d %H:%M:%S'
                         )
@@ -33,7 +33,7 @@ def threaded(m, cliente_num):
 
     # Connect to server on local computer
     s.connect((host, port))
-    print("Cliente #%d Ready to receive info ", cliente_num)
+    print("Cliente #", cliente_num, " listo para recibir información")
     logging.info("CLIENT: client #%d ready to receive info", cliente_num)
     dataTotal = ''
 
