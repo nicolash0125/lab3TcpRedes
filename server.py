@@ -37,9 +37,9 @@ def threaded(socket):
         print("Fin de envío")
 
         # Send hash
-        h = str(m.hexdigest())
-        print("Digest enviado: ", m.hexdigest())
-        socket.send(("HASHH" + h).encode(encoding='ANSI', errors='strict'))
+        h = m.hexdigest()
+        print("Digest enviado: ", h)
+        socket.send(("HASHH" + h).encode())
 
  # Connection closed
     socket.close()
@@ -50,7 +50,7 @@ def main():
     global file
 
     # Initializes the server log
-    host = "localhost"
+    host = socket.gethostname()
     # Port number
     port = 50000
     logging.info('Connected to %s on port %s', host, port)
@@ -77,7 +77,8 @@ def main():
     file = f
     print("Archivo seleccionado: ", file)
     global num_conn
-    num_conn = int(input('\n ¿A partir de cuántas conexiones desea enviar?'))
+    num_conn = int(
+        input('\n ¿A partir de cuántas conexiones desea enviar? \n'))
     logging.info('SERVER: el número de conexiones definido es %s', num_conn)
     print("Esperando conexiones...")
 

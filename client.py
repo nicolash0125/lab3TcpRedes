@@ -25,7 +25,7 @@ def threaded(m, cliente_num):
     start_time = time.time()
 
     # Local host IP '127.0.0.1'
-    host = '127.0.0.1'
+    host = '18.209.223.196'
 
     # Define the port on which you want to connect
     port = 50000
@@ -35,12 +35,12 @@ def threaded(m, cliente_num):
     s.connect((host, port))
     print("Cliente #", cliente_num, " listo para recibir información")
     logging.info("CLIENT: client #%d ready to receive info", cliente_num)
-    dataTotal = ''
+    dataTotal = b''
 
     while True:
         # Message received from server
         data = s.recv(1048576)
-        dataTotal += str(data.decode('ANSI'))
+        dataTotal += data
 
         if not data:
             print("Termino el envío")
@@ -49,14 +49,12 @@ def threaded(m, cliente_num):
             logging.info("Found hash")
             index = data.find(b"HASHH")
 
-            index2 = dataTotal.find("HASHH")
+            index2 = dataTotal.find(b"HASHH")
 
-            m.update(dataTotal[:index2].encode(
-                encoding='ANSI', errors='strict'))
+            m.update(dataTotal[:index2])
 
             realM = data[index+5:]
-            print("Hash recibido ", realM.decode(
-                encoding='ANSI', errors='strict'))
+            print("Hash recibido ", realM.decode())
             print("Hash creado ", m.hexdigest())
             if m.hexdigest() == realM.decode():
                 print("Hash correcto")
