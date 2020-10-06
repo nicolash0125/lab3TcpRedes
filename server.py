@@ -9,10 +9,6 @@ import hashlib
 import time
 from threading import Thread
 # print_lock = threading.Lock()
-logging.basicConfig(filename="./serverFiles/serverLog.log", level=logging.INFO,
-                    format='%(asctime)s %(levelname)-8s %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S'
-                    )
 
 
 # Thread function
@@ -46,6 +42,10 @@ def threaded(socket):
 
 
 def main():
+    logging.basicConfig(filename="./serverFiles/serverLog.log", level=logging.INFO,
+                        format='%(asctime)s %(levelname)-8s %(message)s',
+                        datefmt='%Y-%m-%d %H:%M:%S'
+                        )
 
     global file
 
