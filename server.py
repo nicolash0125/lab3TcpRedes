@@ -8,34 +8,37 @@ import logging
 import hashlib
 import time
 from threading import Thread
-# print_lock = threading.Lock()
 
 
 # Thread function
 # Socket is the socket object with which connection was made, used to send and receive messages
-def threaded(socket):
+def threaded(socket, threadNum):
 
-    start_time = time.time()
     m = hashlib.sha256()
-    logging.info("SERVER: iniciando")
-    print("El archivo que se va a abrir es: ", file)
-    logging.info("SERVER: el archivo abierto fue %s ", file)
+    logging.info("SERVER thread #%s: iniciando", threadNum)
+    print("SERVER thread #", threadNum,
+          ". El archivo que se va a abrir es: ", file)
+    logging.info("SERVER thread #%s: el archivo abierto fue %s ",
+                 threadNum, file)
     with open(file, 'rb') as f:
 
         # Data received from client
         data = f.read()
 
         m.update(data)
-
+        start_time = time.time()
         # Send back reversed string to client
         socket.send(data)
 
-        print("Fin de envío")
+        print("Fin de envío thread #", threadNum)
 
         # Send hash
         h = m.hexdigest()
         print("Digest enviado: ", h)
         socket.send(("HASHH" + h).encode())
+
+    logging.info('SERVER thread #%s: tiempo del envío %s', threadNum,
+                 (time.time()-start_time))
 
  # Connection closed
     socket.close()
@@ -91,7 +94,7 @@ def main():
         # print_lock.acquire()
         print('Connected to : ', address[0], ':', address[1])
 
-        t = Thread(target=threaded, args=(clientsocket,))
+        t = Thread(target=threaded, args=(clientsocket, len(threads)))
         threads.append(t)
 
         # In case you want to start the threads at once
@@ -101,6 +104,7 @@ def main():
             for i in threads:
                 i.start()
             threads = []
+            logging.info('SERVER: reiniciando threads')
     serversocket.close()
 
 

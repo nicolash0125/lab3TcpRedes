@@ -1,0 +1,36 @@
+2020-10-06 16:45:04 INFO     Connected to DESKTOP-RAFRA5C on port 50000
+2020-10-06 16:45:07 INFO     SERVER: el número de conexiones definido es 1
+2020-10-06 16:45:57 INFO     Connected to DESKTOP-RAFRA5C on port 50000
+2020-10-06 16:45:59 INFO     SERVER: el número de conexiones definido es 1
+2020-10-06 16:46:05 INFO     SERVER thread: iniciando
+2020-10-06 16:46:05 INFO     SERVER thread: el archivo abierto fue ./data/Redes5G.mp4 
+2020-10-06 16:46:11 INFO     SERVER thread: Tiempo del envío 4.932435750961304
+2020-10-06 16:46:29 INFO     Connected to DESKTOP-RAFRA5C on port 50000
+2020-10-06 16:46:32 INFO     SERVER: el número de conexiones definido es 3
+2020-10-06 16:46:44 INFO     SERVER thread: iniciando
+2020-10-06 16:46:44 INFO     SERVER thread: el archivo abierto fue ./data/Redes5G.mp4 
+2020-10-06 16:46:44 INFO     SERVER thread: iniciando
+2020-10-06 16:46:44 INFO     SERVER thread: iniciando
+2020-10-06 16:46:44 INFO     SERVER thread: el archivo abierto fue ./data/Redes5G.mp4 
+2020-10-06 16:46:44 INFO     SERVER thread: el archivo abierto fue ./data/Redes5G.mp4 
+2020-10-06 16:46:56 INFO     SERVER thread: Tiempo del envío 10.03223466873169
+2020-10-06 16:46:56 INFO     SERVER thread: Tiempo del envío 10.057167053222656
+2020-10-06 16:46:56 INFO     SERVER thread: Tiempo del envío 10.294049978256226
+2020-10-06 16:54:58 INFO     Connected to DESKTOP-RAFRA5C on port 50000
+2020-10-06 16:55:01 INFO     SERVER: el número de conexiones definido es 1
+2020-10-06 16:55:20 INFO     SERVER thread #0: iniciando
+2020-10-06 16:55:20 INFO     SERVER: reiniciando threads
+2020-10-06 16:55:20 INFO     SERVER thread #0: el archivo abierto fue ./data/Redes5G.mp4 
+2020-10-06 16:55:26 INFO     SERVER thread #0: tiempo del envío 4.910374641418457
+2020-10-06 16:55:44 INFO     Connected to DESKTOP-RAFRA5C on port 50000
+2020-10-06 16:55:46 INFO     SERVER: el número de conexiones definido es 3
+2020-10-06 16:55:56 INFO     SERVER thread #0: iniciando
+2020-10-06 16:55:56 INFO     SERVER thread #1: iniciando
+2020-10-06 16:55:56 INFO     SERVER thread #0: el archivo abierto fue ./data/Redes5G.mp4 
+2020-10-06 16:55:56 INFO     SERVER thread #2: iniciando
+2020-10-06 16:55:56 INFO     SERVER: reiniciando threads
+2020-10-06 16:55:56 INFO     SERVER thread #1: el archivo abierto fue ./data/Redes5G.mp4 
+2020-10-06 16:55:56 INFO     SERVER thread #2: el archivo abierto fue ./data/Redes5G.mp4 
+2020-10-06 16:56:10 INFO     SERVER thread #2: tiempo del envío 11.810139417648315
+2020-10-06 16:56:10 INFO     SERVER thread #0: tiempo del envío 11.908874988555908
+2020-10-06 16:56:10 INFO     SERVER thread #1: tiempo del envío 12.358195304870605
