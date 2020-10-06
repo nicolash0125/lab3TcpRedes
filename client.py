@@ -23,7 +23,7 @@ def main():
 
 def start(m, cliente_num):
 
-    # host = socket.gethostname()
+    #host = socket.gethostname()
     host = '18.209.223.196'
 
     # Define the port on which you want to connect
@@ -42,7 +42,8 @@ def start(m, cliente_num):
     ghost = True
     while True:
         # Message received from server
-        data = s.recv(1048576)
+        size = 1048576
+        data = s.recv(size)
         dataTotal += data
 
         if data and ghost:
@@ -69,6 +70,8 @@ def start(m, cliente_num):
                 print("Hash incorrecto")
                 logging.info("CLIENT: hash corrupto")
 
+    logging.info('CLIENT: Cantidad bytes recibidos %s', len(dataTotal))
+    logging.info('CLIENT: Cantidad paquetes %s', len(dataTotal)/size)
     logging.info('CLIENT: Tiempo del envío %s', (time.time()-start_time))
     logging.info("---------------------------------------------")
     s.close()

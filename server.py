@@ -28,14 +28,20 @@ def threaded(socket, threadNum):
         m.update(data)
         start_time = time.time()
         # Send back reversed string to client
-        socket.send(data)
+        numBytes = socket.send(data)
 
         print("Fin de envío thread #", threadNum)
 
         # Send hash
         h = m.hexdigest()
         print("Digest enviado: ", h)
-        socket.send(("HASHH" + h).encode())
+        numBytesHash = socket.send(("HASHH" + h).encode())
+
+        logging.info('SERVER thread #%s: bytes enviados sin hash %s',
+                     threadNum, numBytes)
+
+        logging.info('SERVER thread #%s: bytes enviados en total %s',
+                     threadNum, numBytes + numBytesHash)
 
     logging.info('SERVER thread #%s: tiempo del envío %s', threadNum,
                  (time.time()-start_time))
