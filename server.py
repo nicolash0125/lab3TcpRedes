@@ -7,7 +7,7 @@ import threading
 import logging
 import hashlib
 import time
-
+from threading import Thread
 # print_lock = threading.Lock()
 logging.basicConfig(filename="serverLog.log", level=logging.INFO,
                     format='%(asctime)s %(levelname)-8s %(message)s',
@@ -18,9 +18,6 @@ logging.basicConfig(filename="serverLog.log", level=logging.INFO,
 # Thread function
 # Socket is the socket object with which connection was made, used to send and receive messages
 def threaded(socket):
-
-    while cont < num_conn:
-        pass
 
     start_time = time.time()
     m = hashlib.sha256()
@@ -81,9 +78,8 @@ def main():
     logging.info('SERVER: el número de conexiones definido es %s', num_conn)
     print("Esperando conexiones...")
 
-    # Counter with number of connections received
-    global cont
-    cont = 0
+    # Threads connect
+    threads = []
     while True:
         # Accept connections from outside
         (clientsocket, address) = serversocket.accept()
@@ -91,9 +87,13 @@ def main():
         # print_lock.acquire()
         print('Connected to : ', address[0], ':', address[1])
 
-        # Start a new thread and return its identifier
-        start_new_thread(threaded, (clientsocket,))
-        cont += 1
+        t = Thread(target=threaded, args=(clientsocket,))
+        threads.append(t)
+        #start_new_thread(threaded, (clientsocket,))
+        if len(threads) == num_conn:
+            for i in threads:
+                i.start()
+            threads=[]
     serversocket.close()
 
 
