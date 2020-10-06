@@ -70,3 +70,13 @@
 2020-10-06 12:27:04 INFO     SERVER: el número de conexiones definido es 2
 2020-10-06 12:28:01 INFO     Connected to localhost on port 50000
 2020-10-06 12:28:05 INFO     SERVER: el número de conexiones definido es 2
+2020-10-06 12:29:01 INFO     Connected to localhost on port 50000
+2020-10-06 12:29:07 INFO     SERVER: el número de conexiones definido es 2
+2020-10-06 12:29:29 INFO     SERVER: iniciando
+2020-10-06 12:29:29 INFO     SERVER: el archivo abierto fue holi.txt 
+2020-10-06 12:29:29 INFO     SERVER: iniciando
+2020-10-06 12:29:29 INFO     SERVER: el archivo abierto fue holi.txt 
+2020-10-06 12:29:45 INFO     SERVER: iniciando
+2020-10-06 12:29:45 INFO     SERVER: el archivo abierto fue holi.txt 
+2020-10-06 12:29:45 INFO     SERVER: iniciando
+2020-10-06 12:29:45 INFO     SERVER: el archivo abierto fue holi.txt 
