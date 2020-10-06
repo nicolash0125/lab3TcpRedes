@@ -10,7 +10,7 @@ import random
 
 def main():
 
-    cliente_num = random.random()*100000000000
+    cliente_num = int(random.random()*100000000000000)
     # Initializes the client log
     logging.basicConfig(filename="./clientsFiles/client" + str(cliente_num) + ".log", level=logging.INFO,
                         format='%(asctime)s %(levelname)-8s %(message)s',

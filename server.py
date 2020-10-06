@@ -99,7 +99,7 @@ def main():
         if len(threads) == num_conn:
             for i in threads:
                 i.start()
-            threads=[]
+            threads = []
     serversocket.close()
 
 
