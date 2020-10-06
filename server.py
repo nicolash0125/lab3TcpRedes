@@ -7,7 +7,6 @@ import threading
 import logging
 import hashlib
 import time
-from threading import Thread
 
 # print_lock = threading.Lock()
 logging.basicConfig(filename="serverLog.log", level=logging.INFO,
@@ -71,7 +70,7 @@ def main():
                           "\n 1. 145 MB"
                           "\n 2. 355 MB"))
     if inputText == 1:
-        f = "holi.txt"
+        f = "../videos/Redes5G.mp4"
     else:
         f = "../videos/Vivaldi.mp4"
 
@@ -85,7 +84,6 @@ def main():
     # Counter with number of connections received
     global cont
     cont = 0
-    threads = []
     while True:
         # Accept connections from outside
         (clientsocket, address) = serversocket.accept()
@@ -94,14 +92,7 @@ def main():
         print('Connected to : ', address[0], ':', address[1])
 
         # Start a new thread and return its identifier
-        t = Thread(target=threaded, args=(clientsocket,))
-        threads.append(t)
-        #start_new_thread(threaded, (clientsocket,))
-        if len(threads) == num_conn:
-            for i in threads:
-                i.start()
-            threads=[]
-
+        start_new_thread(threaded, (clientsocket,))
         cont += 1
     serversocket.close()
 
