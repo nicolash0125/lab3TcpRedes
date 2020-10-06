@@ -92,7 +92,10 @@ def main():
 
         t = Thread(target=threaded, args=(clientsocket,))
         threads.append(t)
+
+        # In case you want to start the threads at once
         #start_new_thread(threaded, (clientsocket,))
+
         if len(threads) == num_conn:
             for i in threads:
                 i.start()
