@@ -1,4 +1,4 @@
-# lab3TcpRedes
+# Laboratorio 3 TCP
 
 Para hacer funcionar el servidor se deben descargar los archivos de 20, 50 y 200 MB de https://www.thinkbroadband.com/download.
 
